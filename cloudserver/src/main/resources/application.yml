@@ -1,0 +1,11 @@
+server:
+  port: 7776
+eureka:
+  client:
+    #注册中心地址
+    service-url:
+      defaultZone: http://localhost:7776/eureka
+    #是否把当前项目注册到注册中心
+    register-with-eureka: false
+    #是否在注册中心检索项目
+    fetch-registry: false

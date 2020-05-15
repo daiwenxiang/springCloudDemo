@@ -1,0 +1,38 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: cloudcustomer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7776/eureka
+
+cloudprovider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#配置开启熔断器
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 2  #10秒内两次失败，就开启熔断
+        sleepWindowInMilliseconds: 20000 #短路多久以后开始尝试是否恢复，默认5s
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000  #默认一秒，feign调用的超时时间
+  #timeoutInMilliseconds:   #是指feign调用的等待时间，超过就不等了，feign调用返回超时错误
+
+ribbon:
+  ReadTimeout: 3000      #ribbon调用提供者的超时时间，默认1秒
+  ConnectTimeout: 3000   #ribbon连接超时时间，默认1秒
+  MaxAutoRetries: 2 #重试次数 (不包含第一次)
+  MaxAutoRetriesNextServer: 1 #切换到其他实例的次数，也会切换到自己，切换到其他服务器后重试次数还是一样
