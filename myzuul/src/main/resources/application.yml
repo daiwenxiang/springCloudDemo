@@ -1,0 +1,15 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: myzuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7776/eureka
+
+zuul:
+  routes:
+      cloudcustomer: /customer/**

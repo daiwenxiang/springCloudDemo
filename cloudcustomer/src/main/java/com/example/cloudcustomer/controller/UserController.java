@@ -13,23 +13,24 @@ public class UserController {
     @Resource
     private LocalService localService;
 
-    @GetMapping("getAll")
-    public List<Map> getAll() {
+    @GetMapping("/getAll")
+    public List<Map> getAll(String words) {
+        System.out.println("words = " + words);
         return localService.getAll();
     }
 
-    @GetMapping("add")
+    @GetMapping("/add")
     public int add(@RequestParam Map map){
 //        System.out.println("--------customer-------UserController.add");
         return localService.add(map);
     }
 
-    @GetMapping("del")
+    @GetMapping("/del")
     public int del(Integer id){
         return localService.del(id);
     }
 
-    @GetMapping("update")
+    @GetMapping("/update")
     public int update(@RequestParam Map map) {
         return localService.update(map);
     }

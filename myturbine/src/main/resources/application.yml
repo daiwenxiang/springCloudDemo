@@ -1,5 +1,6 @@
 server:
   port: 9000
+
 turbine:
   app-config: cloudcustomer,cloudcustomer2   #配置从哪些应用获得监控数据
   #  aggregator:
@@ -7,10 +8,12 @@ turbine:
   cluster-name-expression: new String("default")  #集群名称
   instanceUrlSuffix: /hystrix.stream   #监控具体项目提供的监控地址 默认是 /hystrix/hystrix.stream
   combine-host-port: true #可以通过主机名加端口区分应用
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7776/eureka
+
 spring:
   application:
     name: myturbine

@@ -20,19 +20,19 @@ public class UserController {
 //        return userService.getAll();
 //    }
 
-    @GetMapping("getAll")
+    @GetMapping("/getAll")
     public List<Map> getAll() {
-        try {
-            System.out.println("1111111");
-            Thread.sleep(2000);
-            System.out.println("2222222");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println("1111111");
+//            Thread.sleep(2000);
+//            System.out.println("2222222");
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return userService.getAll();
     }
 
-    @GetMapping("getAll2")
+    @GetMapping("/getAll2")
     public List<Map> getAll2() {
         try {
             System.out.println("1111111");
@@ -44,18 +44,18 @@ public class UserController {
         return userService.getAll();
     }
 
-    @GetMapping("add")
+    @GetMapping("/add")
     public int add(@RequestParam Map map){
         System.out.println("-----provider-------UserController.add");
         return userService.add(map);
     }
 
-    @GetMapping("del")
+    @GetMapping("/del")
     public int del(Integer id){
         return userService.del(id);
     }
 
-    @GetMapping("update")
+    @GetMapping("/update")
     public int update(@RequestParam Map map) {
         return userService.update(map);
     }
