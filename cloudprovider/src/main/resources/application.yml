@@ -1,5 +1,6 @@
 server:
   port: 8082
+
 spring:
   application:
     name: cloudprovider
@@ -8,10 +9,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: daiwenxiang
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7776/eureka
+
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
