@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="myzuul" />
-        <module name="mydashboard" />
+        <module name="cloudserver" />
         <module name="cloudcustomer2" />
         <module name="myturbine" />
-        <module name="cloudserver" />
+        <module name="mydashboard" />
         <module name="cloud8" />
         <module name="cloudprovider" />
         <module name="cloudcustomer" />

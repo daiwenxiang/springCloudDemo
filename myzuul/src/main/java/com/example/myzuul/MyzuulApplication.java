@@ -1,6 +1,5 @@
 package com.example.myzuul;
 
-import com.example.myzuul.filter.MyFilter1;
 import com.example.myzuul.filter.MyWordFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,10 +16,10 @@ public class MyzuulApplication {
         SpringApplication.run(MyzuulApplication.class, args);
     }
 
-    @Bean
-    public MyFilter1 getMyFilter11(){
-        return new MyFilter1();
-    }
+//    @Bean
+//    public MyFilter1 getMyFilter11(){
+//        return new MyFilter1();
+//    }
 
     @Bean
     public MyWordFilter getMyFilter22(){

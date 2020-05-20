@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>list.html</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- "uid": 1,
+        "password": "aaa",
+        "salt": "saltadmin",
+        "name": "aaa",
+        "state": "0",
+        "userName": "admin"-->
+</head>
+<body>
+<div id="app">
+<table>
+  <tr v-model="">
+    <td>uid</td>
+    <td>password</td>
+    <td>salt</td>
+    <td>name</td>
+    <td>state</td>
+    <td>userName</td>
+  </tr>
+</table>
+</div>
+</body>
+<script>
+  const app = new Vue({
+    el:'app',
+    data:{
+      info:{}
+    },
+    methods:{
+      getAll(){
+        $.get("http://localhost:8060/customer/getAll", function (data) {
+          app.info = data
+
+        })
+      }
+    },
+    created(){
+      this.getAll()
+    }
+  })
+</script>
+</html>

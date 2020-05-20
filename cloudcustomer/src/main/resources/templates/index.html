@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>index.html</title>
+</head>
+<body>
+<!--<form action="/customer/getAll">-->
+<!--  请输入文字: 不能骂人哦:<input type="text" name="words" placeholder="请输入"><br/>-->
+<!--  <input type="submit" value="提交查询"/>-->
+<!--</form>-->
+
+<table>
+  <tr th:each="user:${list}">
+    <td th:text="${user}"></td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>
